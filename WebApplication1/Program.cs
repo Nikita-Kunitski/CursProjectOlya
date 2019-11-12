@@ -36,7 +36,7 @@ namespace WebApplication1
 					logger.LogError(ex, "An error occurred while seeding the database.");
 				}
 			}
-
+			AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
 			host.Run();
 		}
 
