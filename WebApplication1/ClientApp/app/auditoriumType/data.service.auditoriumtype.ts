@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuditoriumType } from './auditoriumtype';
 
 @Injectable()
-export class DataService {
+export class DataServiceAuditoriumType {
 
     private url = "/api/auditoriumType";
 

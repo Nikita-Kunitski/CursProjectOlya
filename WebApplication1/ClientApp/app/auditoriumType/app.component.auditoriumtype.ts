@@ -1,11 +1,11 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from "./data.service.auditoriumtype";
+import { DataServiceAuditoriumType } from "./data.service.auditoriumtype";
 import { AuditoriumType } from './auditoriumtype';
 
 @Component({
-    selector: 'app',
+    selector: 'app1',
     templateUrl: './app.component.auditoriumtype.html',
-    providers: [DataService]
+    providers: [DataServiceAuditoriumType]
 })
 export class AppComponentAuditoriumType implements OnInit {
 
@@ -13,7 +13,7 @@ export class AppComponentAuditoriumType implements OnInit {
     auditoriumTypes: AuditoriumType[];                // массив товаров
     tableMode: boolean = true;          // табличный режим
 
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataServiceAuditoriumType) { }
 
     ngOnInit() {
         this.loadAuditoriumTypes();    // загрузка данных при старте компонента  
