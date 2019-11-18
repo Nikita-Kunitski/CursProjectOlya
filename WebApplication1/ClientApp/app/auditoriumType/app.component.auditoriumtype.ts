@@ -1,13 +1,13 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { DataService } from './data.service';
+import { DataService } from "./data.service.auditoriumtype";
 import { AuditoriumType } from './auditoriumtype';
 
 @Component({
     selector: 'app',
-    templateUrl: './app.component.html',
+    templateUrl: './app.component.auditoriumtype.html',
     providers: [DataService]
 })
-export class AppComponent implements OnInit {
+export class AppComponentAuditoriumType implements OnInit {
 
     auditoriumType: AuditoriumType = new AuditoriumType();   // изменяемый товар
     auditoriumTypes: AuditoriumType[];                // массив товаров

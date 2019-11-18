@@ -2,10 +2,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { AppComponentAuditoriumType } from './auditoriumType/app.component.auditoriumtype';
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpClientModule],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent]
+    declarations: [AppComponentAuditoriumType],
+    bootstrap: [AppComponentAuditoriumType]
 })
 export class AppModule { }

@@ -10,8 +10,9 @@
   <ItemGroup>
     <None Remove="ClientApp\app.components.ts" />
     <None Remove="ClientApp\app\app.module.ts" />
+    <None Remove="ClientApp\app\auditorium.ts" />
     <None Remove="ClientApp\app\auditoriumtype.ts" />
-    <None Remove="ClientApp\app\data.service.ts" />
+    <None Remove="ClientApp\app\data.service.auditoriumtype.ts" />
     <None Remove="ClientApp\main.ts" />
     <None Remove="ClientApp\polyfills.ts" />
     <None Remove="webpack.config.ts" />
@@ -31,13 +32,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\auditoriumType\app.component.auditoriumtype.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\auditoriumtype.ts" />
-    <TypeScriptCompile Include="ClientApp\app\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\auditorium.ts" />
+    <TypeScriptCompile Include="ClientApp\app\auditoriumType\auditoriumtype.ts" />
+    <TypeScriptCompile Include="ClientApp\app\auditoriumType\data.service.auditoriumtype.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="webpack.config.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\auditorium\" />
   </ItemGroup>
 
 </Project>
