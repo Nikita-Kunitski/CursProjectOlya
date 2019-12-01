@@ -7,8 +7,8 @@ namespace WebApplication1.Models
 {
 	public enum TypeLesson
 	{
-		Lecture,
-		Practice,
-		Lab
+		Лекция,
+		Практика,
+		Лаб
 	}
 }

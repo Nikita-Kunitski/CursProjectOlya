@@ -10,11 +10,11 @@ namespace WebApplication1.Models
 	/// </summary>
 	public enum DayOfWeek
 	{
-		Monday,
-		Tuesday,
-		Wednesday,
-		Thursday,
-		Friday,
-		Saturday
+		Понедельник,
+		Вторник,
+		Среда,
+		Четверг,
+		Пятница,
+		Суббота
 	}
 }
