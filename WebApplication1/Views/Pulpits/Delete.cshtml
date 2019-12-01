@@ -1,0 +1,24 @@
+﻿@model WebApplication1.Models.Pulpit
+
+@{
+    ViewData["Title"] = "Удаление кафедры";
+}
+
+<h2>Вы действительно хотите удалить эту кафедру?</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PulpitName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PulpitName)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-action="Index">Отмена</a>
+    </form>
+</div>
