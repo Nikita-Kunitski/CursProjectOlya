@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Models;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Controllers.API
 {
 	[Route("api/auditorium")]
-	public class AuditoriumController: Controller
+	public class AuditoriumControllerApi: Controller
 	{
 		ApplicationDbContext db;
-		public AuditoriumController(ApplicationDbContext context)
+		public AuditoriumControllerApi(ApplicationDbContext context)
 		{
 			db = context;
 		}

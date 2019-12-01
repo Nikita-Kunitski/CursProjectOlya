@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Data;
 using WebApplication1.Models;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Controllers.API
 {
 	[Route("api/subject")]
-	public class SubjectController:Controller
+	public class SubjectControllerApi:Controller
 	{
 		ApplicationDbContext db;
-		public SubjectController(ApplicationDbContext context)
+		public SubjectControllerApi(ApplicationDbContext context)
 		{
 			db = context;
 		}

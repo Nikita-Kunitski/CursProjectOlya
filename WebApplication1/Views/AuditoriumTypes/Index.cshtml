@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication1.Models.AuditoriumType>
+
+@{
+    ViewData["Title"] = "Типы аудиторий";
+}
+
+<h2>Список типов аудиторий</h2>
+<p>
+    <a asp-action="Create">Добавить новый тип аудитории</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditoriumAbbreviation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuditoriumName)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditoriumAbbreviation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditoriumName)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
