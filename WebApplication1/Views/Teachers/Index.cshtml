@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication1.Models.Teacher>
+
+    @{
+    ViewData["Title"] = "Список преподавателей";
+    }
+
+    <h2>Список преподавателей</h2>
+
+    <p>
+        <a asp-action="Create">Создать</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pulpit)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pulpit.PulpitName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
