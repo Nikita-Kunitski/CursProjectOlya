@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.Auditorium
+
+@{
+    ViewData["Title"] = "Удаление";
+}
+
+<h2>Вы действительно хотите удалить этот элемент?</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditoriumNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuditoriumNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditoriumType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuditoriumType.AuditoriumAbbreviation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AuditoriumCapacity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AuditoriumCapacity)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Удалить" class="btn btn-default" /> |
+        <a asp-action="Index">Отмена</a>
+    </form>
+</div>
