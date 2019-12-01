@@ -8,12 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientApp\app\auditorium\**" />
+    <Content Remove="ClientApp\app\auditorium\**" />
+    <EmbeddedResource Remove="ClientApp\app\auditorium\**" />
+    <None Remove="ClientApp\app\auditorium\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\app.components.ts" />
+    <None Remove="ClientApp\app\app.component.ts" />
     <None Remove="ClientApp\app\app.module.ts" />
     <None Remove="ClientApp\app\auditorium.ts" />
     <None Remove="ClientApp\app\auditoriumtype.ts" />
-    <None Remove="ClientApp\app\auditorium\app.component.auditorium.ts" />
-    <None Remove="ClientApp\app\auditorium\data.service.auditorium.ts" />
+    <None Remove="ClientApp\app\auditoriumType\auditorium.type.module.ts" />
+    <None Remove="ClientApp\app\data.component.ts" />
+    <None Remove="ClientApp\app\data.module.ts" />
     <None Remove="ClientApp\app\data.service.auditoriumtype.ts" />
     <None Remove="ClientApp\main.ts" />
     <None Remove="ClientApp\polyfills.ts" />
@@ -34,13 +43,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\auditoriumType\app.component.auditoriumtype.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
-    <TypeScriptCompile Include="ClientApp\app\auditorium\app.component.auditorium.ts" />
-    <TypeScriptCompile Include="ClientApp\app\auditorium\auditorium.ts" />
+    <TypeScriptCompile Include="ClientApp\app\auditoriumType\auditorium.type.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\auditoriumType\auditoriumtype.ts" />
     <TypeScriptCompile Include="ClientApp\app\auditoriumType\data.service.auditoriumtype.ts" />
-    <TypeScriptCompile Include="ClientApp\app\auditorium\data.service.auditorium.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\data.module.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="webpack.config.ts" />

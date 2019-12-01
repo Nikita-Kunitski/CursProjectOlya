@@ -24,10 +24,10 @@ namespace WebApplication1.Controllers
 		}
 
 		[HttpGet("{id}")]
-		public IEnumerable<AuditoriumType> Get(int id)
+		public AuditoriumType Get(int id)
 		{
 			AuditoriumType auditoriumType = db.AuditoriumTypes.FirstOrDefault(x => x.Id == id);
-			return db.AuditoriumTypes.ToList();
+			return auditoriumType;
 		}
 
 		[HttpPost]

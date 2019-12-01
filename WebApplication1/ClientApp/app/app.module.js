@@ -8,16 +8,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponentAuditoriumType } from './auditoriumType/app.component.auditoriumtype';
-import { AppComponentAuditorium } from './auditorium/app.component.auditorium';
+import { AppComponent } from './app.component';
+import { DataModule } from './data.module';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         NgModule({
-            imports: [BrowserModule, FormsModule, HttpClientModule],
-            declarations: [AppComponentAuditoriumType, AppComponentAuditorium],
-            bootstrap: [AppComponentAuditoriumType, AppComponentAuditorium]
+            imports: [BrowserModule, DataModule, FormsModule, HttpClientModule],
+            declarations: [AppComponent],
+            bootstrap: [AppComponent]
         })
     ], AppModule);
     return AppModule;

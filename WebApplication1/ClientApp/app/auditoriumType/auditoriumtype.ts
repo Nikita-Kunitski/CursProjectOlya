@@ -1,6 +1,13 @@
 ﻿export class AuditoriumType {
     constructor(
-        public id?: number,
-        public auditoriumAbbreviation?: string,
-        public auditoriumName?: string) { }
+        id?: number,
+        auditoriumAbbreviation?: string,
+        auditoriumName?: string) {
+        this.id = id;
+        this.auditoriumName = auditoriumName;
+        this.auditoriumAbbreviation = auditoriumAbbreviation;
+    }
+    public id: number;
+    public auditoriumAbbreviation: string;
+    public auditoriumName: string;
 }
