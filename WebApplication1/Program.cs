@@ -28,7 +28,8 @@ namespace WebApplication1
 				{
 					var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 					var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-					await DataInitializer.InitializeAsync(userManager, rolesManager);
+					var context = services.GetRequiredService<ApplicationDbContext>();
+					await DataInitializer.InitializeAsync(context, userManager, rolesManager);
 				}
 				catch (Exception ex)
 				{

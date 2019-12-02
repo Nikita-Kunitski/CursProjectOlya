@@ -17,6 +17,8 @@ namespace WebApplication1.Models
 
 		public int Id { get; set; }
 
+		public string PulpitAbbreviation { get; set; }
+
 		public string PulpitName { get; set; }
 
 		public ICollection<Teacher> Teachers { get; set; }
