@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.Timetable
+
+@{
+    ViewData["Title"] = "Редактирование";
+}
+
+<h2>Редактирование</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DayOfWeek" class="control-label"></label>
+                <select asp-for="DayOfWeek" class="form-control" asp-items="Html.GetEnumSelectList<WebApplication1.Models.DayOfWeek>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeLesson" class="control-label"></label>
+                <select asp-for="TypeLesson" class="form-control" asp-items="Html.GetEnumSelectList<WebApplication1.Models.TypeLesson>()"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numbersubjectofday" class="control-label"></label>
+                <select asp-for="Numbersubjectofday.Number" class="form-control" asp-items="ViewBag.LessonNumberId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <select asp-for="Subject.SubjectAbbreviation" class="form-control" asp-items="ViewBag.SubjectId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Teacher" class="control-label"></label>
+                <select asp-for="Teacher.FullName" class="form-control" asp-items="ViewBag.TeacherId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auditorium" class="control-label"></label>
+                <select asp-for="Auditorium.AuditoriumNumber" class="form-control" asp-items="ViewBag.AuditoriumId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Group" class="control-label"></label>
+                <select asp-for="Group.Code" class="form-control" asp-items="ViewBag.GroupId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Отмена</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

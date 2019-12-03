@@ -26,6 +26,8 @@ namespace WebApplication1.Models
 
 		public int? SubjectId { get; set; }
 
+		public int? NumbersubjectofdayId { get; set; }
+
 		public Subject Subject { get; set; }
 
 		public Teacher Teacher { get; set; }

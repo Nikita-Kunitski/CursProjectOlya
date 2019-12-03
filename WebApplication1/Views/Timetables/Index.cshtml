@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebApplication1.Models.Timetable>
+
+@{
+    ViewData["Title"] = "Список занятий";
+}
+
+<h2>Список занятий</h2>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DayOfWeek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeLesson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numbersubjectofday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Auditorium)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Group)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayOfWeek)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeLesson)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numbersubjectofday.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.SubjectAbbreviation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Auditorium.AuditoriumNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Group.Code)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
