@@ -13,11 +13,40 @@ export class AuditoriumType {
        public auditoriumName?: string) { }
 }
 
-export class Subject {
+export enum DayOfWeek {
+    Понедельник,
+    Вторник,
+    Среда,
+    Четверг,
+    Пятница,
+    Суббота
+}
+
+export class Faculty {
     constructor(
         public id?: number,
-        public subjectAbbreviation?: string,
-        public subjectName?: string) {
+        public facultyAbbreviation?: string,
+        public facultyName?: string) {
+    }
+}
+
+export class Group {
+    constructor(
+        public id?: number,
+        public code?: string,
+        public countStudent?: number,
+        public faculty?: Faculty,
+        public speciality?: Speciality
+    ) {
+    }
+}
+
+export class LessonNumber {
+    constructor(
+        public id?: number,
+        public number?: number,
+        public begin?: Date,
+        public end?: Date) {
     }
 }
 
@@ -30,6 +59,24 @@ export class Pulpit {
     }
 }
 
+export class Speciality {
+    constructor(
+        public id?: number,
+        public code?: string,
+        public specialityAbbreviation?: string,
+        public specialityName?: string,
+        public faculty?: Faculty) {
+    }
+}
+
+export class Subject {
+    constructor(
+        public id?: number,
+        public subjectAbbreviation?: string,
+        public subjectName?: string) {
+    }
+}
+
 export class Teacher {
     constructor(
         public id?: number,
@@ -38,36 +85,22 @@ export class Teacher {
         ) { }
 }
 
-export class LessonNumber {
+export class TimeTable {
     constructor(
         public id?: number,
-        public number?: number,
-        public begin?: Date,
-        public end?: Date) {
+        public dayOfWeek?: DayOfWeek,
+        public typeLesson?: TypeLesson,
+        public numbersubjectofday?: LessonNumber,
+        public subject?: Subject,
+        public teacher?: Teacher,
+        public auditorium?: Auditorium,
+        public group?: Group) {
+
     }
 }
 
-export class Faculty {
-    constructor(
-        public id?: number,
-        public facultyAbbreviation?: string,
-        public facultyName?:string) {
-    }
-}
-//export class Group {
-//    constructor(
-//        public id?: number,
-//        public code?: string,
-//        public 
-//    ) {
-//    }
-//}
-
-export enum DayOfWeek {
-    Понедельник,
-    Вторник,
-    Среда,
-    Четверг,
-    Пятница,
-    Суббота
+export enum TypeLesson {
+    Лекция,
+    Практика,
+    Лаб
 }
