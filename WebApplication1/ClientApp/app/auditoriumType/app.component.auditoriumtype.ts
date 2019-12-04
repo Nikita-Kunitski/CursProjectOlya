@@ -1,9 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { DataServiceAuditoriumType } from "./data.service.auditoriumtype";
-import { AuditoriumType } from './auditoriumtype';
+import { AuditoriumType } from '../time-table/time-table';
 
 @Component({
-    selector: 'app1',
+    selector: 'auditorium-type',
     templateUrl: './app.component.auditoriumtype.html',
     providers: [DataServiceAuditoriumType]
 })

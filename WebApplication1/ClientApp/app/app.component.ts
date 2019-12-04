@@ -2,9 +2,6 @@
 
 @Component({
     selector: 'my-app',
-    template: `<div>
-                    <h1>AppModule</h1>
-                    <data-comp></data-comp>
-               </div>`
+    template: `<auditorium></auditorium>`
 })
 export class AppComponent { }

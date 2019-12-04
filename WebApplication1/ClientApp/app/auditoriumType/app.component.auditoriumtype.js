@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { DataServiceAuditoriumType } from "./data.service.auditoriumtype";
-import { AuditoriumType } from './auditoriumtype';
+import { AuditoriumType } from '../time-table/time-table';
 var AppComponentAuditoriumType = /** @class */ (function () {
     function AppComponentAuditoriumType(dataService) {
         this.dataService = dataService;
@@ -56,7 +56,7 @@ var AppComponentAuditoriumType = /** @class */ (function () {
     };
     AppComponentAuditoriumType = __decorate([
         Component({
-            selector: 'app1',
+            selector: 'auditorium-type',
             templateUrl: './app.component.auditoriumtype.html',
             providers: [DataServiceAuditoriumType]
         }),

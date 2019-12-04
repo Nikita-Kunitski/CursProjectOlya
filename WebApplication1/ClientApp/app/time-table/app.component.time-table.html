@@ -1,0 +1,7 @@
+﻿<div class="container">
+    <div class="alert alert-success" *ngFor="let aud of auditoriums">
+        <p>{{aud.auditoriumNumber}} ({{aud.auditoriumType.auditoriumAbbreviation}})</p>
+        <br />
+        <p>{{aud.auditoriumCapacity}}</p>
+    </div>
+</div>

@@ -9,14 +9,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { DataModule } from './data.module';
+import { AppComponentTimeTable } from './time-table/app.component.time-table';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         NgModule({
-            imports: [BrowserModule, DataModule, FormsModule, HttpClientModule],
-            declarations: [AppComponent],
+            imports: [BrowserModule, FormsModule, HttpClientModule],
+            declarations: [AppComponent, AppComponentTimeTable],
             bootstrap: [AppComponent]
         })
     ], AppModule);

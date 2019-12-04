@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuditoriumType } from './auditoriumtype';
+import { AuditoriumType } from '../time-table/time-table';
 
 @Injectable()
 export class DataServiceAuditoriumType {
