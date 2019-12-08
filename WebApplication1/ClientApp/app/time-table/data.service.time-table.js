@@ -14,12 +14,16 @@ var DataServiceTimeTable = /** @class */ (function () {
         this.http = http;
         this.urlAuditorium = "api/auditorium";
         this.urlSpeciality = "api/specialities";
+        this.urlFaculty = "api/faculties";
     }
     DataServiceTimeTable.prototype.getAuditoriums = function () {
         return this.http.get(this.urlAuditorium);
     };
     DataServiceTimeTable.prototype.getSpecialities = function () {
         return this.http.get(this.urlSpeciality);
+    };
+    DataServiceTimeTable.prototype.getFaculties = function () {
+        return this.http.get(this.urlFaculty);
     };
     DataServiceTimeTable = __decorate([
         Injectable(),

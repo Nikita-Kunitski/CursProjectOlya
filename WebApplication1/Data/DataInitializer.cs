@@ -97,7 +97,7 @@ namespace WebApplication1.Data
 			faculties.Add(new Faculty() { FacultyAbbreviation = "ИЭФ", FacultyName = "Инженерно-экономический факультет" });
 			faculties.Add(new Faculty() { FacultyAbbreviation = "ТОВ", FacultyName = "Факультет теории органических веществ" });
 			faculties.Add(new Faculty() { FacultyAbbreviation = "ЛХ", FacultyName = "Факультет лесного хозяйства" });
-			if (!context.Faculties.Any());
+			if (!context.Faculties.Any())
 			{
 				context.Faculties.AddRange(faculties.ToArray());
 			}
@@ -112,24 +112,24 @@ namespace WebApplication1.Data
 				Code = "1-23-65-800",
 				SpecialityAbbreviation = "ИСиТ",
 				SpecialityName = "Информационные системы и технологии",
-				FacultyId = faculties[0].Id,
-				Faculty = faculties[0]
+				FacultyId = faculties[0].Id//,
+				//Faculty = faculties[0]
 			});
 			specialities.Add(new Speciality()
 			{
 				Code = "2-45-20-210",
 				SpecialityAbbreviation = "ПОИТ",
 				SpecialityName = "Программное обеспечение информационных технологий",
-				FacultyId = faculties[0].Id,
-				Faculty = faculties[0]
+				FacultyId = faculties[0].Id//,
+			//	Faculty = faculties[0]
 			});
 			specialities.Add(new Speciality()
 			{
 				Code = "21-3-65-50",
 				SpecialityAbbreviation = "БТ",
 				SpecialityName = "Био-технологии",
-				FacultyId = faculties[2].Id,
-				Faculty = faculties[2]
+				FacultyId = faculties[2].Id//,
+				//Faculty = faculties[2]
 			});
 			if (!context.Specialities.Any())
 			{

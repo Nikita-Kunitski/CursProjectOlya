@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataServiceTimeTable {
     private urlAuditorium = "api/auditorium";
     private urlSpeciality = "api/specialities";
+    private urlFaculty = "api/faculties";
 
     constructor(private http: HttpClient) {
     }
@@ -15,5 +16,9 @@ export class DataServiceTimeTable {
 
     getSpecialities() {
         return this.http.get(this.urlSpeciality);
+    }
+
+    getFaculties() {
+        return this.http.get(this.urlFaculty);
     }
 }
