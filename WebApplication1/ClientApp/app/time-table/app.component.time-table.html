@@ -1,7 +1,15 @@
 ﻿<div class="container">
-    <div class="alert alert-success" *ngFor="let aud of auditoriums">
-        <p>{{aud.auditoriumNumber}} ({{aud.auditoriumType.auditoriumAbbreviation}})</p>
-        <br />
-        <p>{{aud.auditoriumCapacity}}</p>
-    </div>
+    <select>
+        <option *ngFor="let s of specialities"> {{s.specialityAbbreviation}}</option>
+    </select>
 </div>
+
+
+
+
+
+
+<!--<div class="alert alert-success" *ngFor="let a of auditoriums">
+    <p>{{a.auditoriumNumber}}, {{a.auditoriumType.auditoriumAbbreviation}}</p>
+    <p>{{a.auditoriumCapacity}}</p>
+</div>-->

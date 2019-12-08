@@ -1,26 +1,30 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { DataServiceTimeTable } from "./data.service.time-table";
-import { AuditoriumType, Auditorium } from '../time-table/time-table';
+import { Auditorium, Speciality } from './time-table';
 
 @Component({
-    selector: 'auditorium',
+    selector: 'time-table',
     templateUrl: './app.component.time-table.html',
     providers: [DataServiceTimeTable]
 })
 export class AppComponentTimeTable implements OnInit {
 
-    constructor(private dataService: DataServiceTimeTable) { }
-    auditorium: Auditorium = new Auditorium();
     auditoriums: Auditorium[];
+    specialities: Speciality[];
 
+    constructor(private dataService: DataServiceTimeTable) {
+
+    }
 
     ngOnInit() {
-        this.loadAuditoriums();    // загрузка данных при старте компонента  
+        this.loadData();
     }
-    // получаем данные через сервис
-    loadAuditoriums() {
-        this.dataService.getAuditoriums()
-            .subscribe((data: Auditorium[]) => this.auditoriums = data);
+
+    loadData() {
+        //this.dataService.getAuditoriums()
+        //    .subscribe((data: Auditorium[]) => this.auditoriums = data);
+        this.dataService.getSpecialities()
+            .subscribe((data: Speciality[]) => this.specialities = data);
     }
     
 }

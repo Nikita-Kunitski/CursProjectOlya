@@ -2,6 +2,6 @@
 
 @Component({
     selector: 'my-app',
-    template: `<auditorium></auditorium>`
+    template: `<time-table></time-table>`
 })
 export class AppComponent { }

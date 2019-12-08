@@ -1,16 +1,16 @@
 ﻿export class Auditorium {
     constructor(
-       public id?: number,
-       public auditoriumNumber?: string,
-       public auditoriumCapacity?: number,
-       public auditoriumType?: AuditoriumType) { }
+        public id?: number,
+        public auditoriumNumber?: string,
+        public auditoriumCapacity?: number,
+        public auditoriumType?: AuditoriumType) { }
 }
 
 export class AuditoriumType {
     constructor(
-       public id?: number,
-       public auditoriumAbbreviation?: string,
-       public auditoriumName?: string) { }
+        public id?: number,
+        public auditoriumAbbreviation?: string,
+        public auditoriumName?: string) { }
 }
 
 export enum DayOfWeek {

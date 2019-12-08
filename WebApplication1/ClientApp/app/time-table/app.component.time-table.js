@@ -9,24 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { DataServiceTimeTable } from "./data.service.time-table";
-import { Auditorium } from '../time-table/time-table';
 var AppComponentTimeTable = /** @class */ (function () {
     function AppComponentTimeTable(dataService) {
         this.dataService = dataService;
-        this.auditorium = new Auditorium();
     }
     AppComponentTimeTable.prototype.ngOnInit = function () {
-        this.loadAuditoriums(); // загрузка данных при старте компонента  
+        this.loadData();
     };
-    // получаем данные через сервис
-    AppComponentTimeTable.prototype.loadAuditoriums = function () {
+    AppComponentTimeTable.prototype.loadData = function () {
         var _this = this;
-        this.dataService.getAuditoriums()
-            .subscribe(function (data) { return _this.auditoriums = data; });
+        //this.dataService.getAuditoriums()
+        //    .subscribe((data: Auditorium[]) => this.auditoriums = data);
+        this.dataService.getSpecialities()
+            .subscribe(function (data) { return _this.specialities = data; });
     };
     AppComponentTimeTable = __decorate([
         Component({
-            selector: 'auditorium',
+            selector: 'time-table',
             templateUrl: './app.component.time-table.html',
             providers: [DataServiceTimeTable]
         }),

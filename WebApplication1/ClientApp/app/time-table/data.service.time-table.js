@@ -12,14 +12,14 @@ import { HttpClient } from '@angular/common/http';
 var DataServiceTimeTable = /** @class */ (function () {
     function DataServiceTimeTable(http) {
         this.http = http;
-        this.urlAuditoriumType = "/api/auditoriumType";
-        this.urlAuditorium = "/api/auditorium";
+        this.urlAuditorium = "api/auditorium";
+        this.urlSpeciality = "api/specialities";
     }
-    DataServiceTimeTable.prototype.getAuditoriumTypes = function () {
-        return this.http.get(this.urlAuditoriumType);
-    };
     DataServiceTimeTable.prototype.getAuditoriums = function () {
         return this.http.get(this.urlAuditorium);
+    };
+    DataServiceTimeTable.prototype.getSpecialities = function () {
+        return this.http.get(this.urlSpeciality);
     };
     DataServiceTimeTable = __decorate([
         Injectable(),
