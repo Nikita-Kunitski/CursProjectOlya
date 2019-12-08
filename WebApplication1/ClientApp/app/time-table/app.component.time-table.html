@@ -1,10 +1,26 @@
 ﻿<div class="container">
-    <select>
-        <option *ngFor="let s of specialities"> {{s.specialityAbbreviation}}</option>
-    </select>
-    <select>
-        <option *ngFor="let f of faculties"> {{f.facultyAbbreviation}}</option>
-    </select>
+    <form (submit)="setFilter(speciality.value, faculty.value)">
+        <div class="form-group">
+            <select class="form-control" id="speciality" #speciality>
+                <option *ngFor="let s of specialities" value="{{s.specialityAbbreviation}}"> {{s.specialityAbbreviation}}</option>
+            </select>
+            <select class="form-control" id="faculty" #faculty>
+                <option *ngFor="let f of faculties"> {{f.facultyAbbreviation}}</option>
+            </select>
+            <br/>
+            <button type="submit" class="btn btn-success">Поиск</button>
+        </div>
+    </form>
+    <br/><br />
+    <div class="container">
+        <div class="alert alert-success" *ngFor="let t of timetables">
+            <p> {{t.dayOfWeek}}</p>
+            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+            <p> {{t.teacher.fullName}}</p>
+            <p> {{t.auditorium.auditoriumNumber}}</p>
+        </div>
+    </div>
 </div>
 
 

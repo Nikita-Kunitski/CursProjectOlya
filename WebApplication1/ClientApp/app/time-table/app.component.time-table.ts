@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { DataServiceTimeTable } from "./data.service.time-table";
-import { Auditorium, Speciality, Faculty } from './time-table';
+import { Auditorium, Speciality, Faculty, TimeTable } from './time-table';
 
 @Component({
     selector: 'time-table',
@@ -12,6 +12,7 @@ export class AppComponentTimeTable implements OnInit {
     auditoriums: Auditorium[];
     specialities: Speciality[];
     faculties: Faculty[];
+    timetables: TimeTable[];
 
     constructor(private dataService: DataServiceTimeTable) {
 
@@ -29,5 +30,9 @@ export class AppComponentTimeTable implements OnInit {
         this.dataService.getFaculties()
             .subscribe((data: Faculty[]) => this.faculties = data);
     }
-    
+
+    setFilter(speciality: string, faculty: string) {
+        this.dataService.getTimeTable(speciality)
+            .subscribe((data: TimeTable[]) => this.timetables = data);
+    }
 }

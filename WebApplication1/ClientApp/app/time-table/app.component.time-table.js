@@ -25,6 +25,11 @@ var AppComponentTimeTable = /** @class */ (function () {
         this.dataService.getFaculties()
             .subscribe(function (data) { return _this.faculties = data; });
     };
+    AppComponentTimeTable.prototype.setFilter = function (speciality, faculty) {
+        var _this = this;
+        this.dataService.getTimeTable(speciality)
+            .subscribe(function (data) { return _this.timetables = data; });
+    };
     AppComponentTimeTable = __decorate([
         Component({
             selector: 'time-table',

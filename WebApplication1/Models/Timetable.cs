@@ -28,6 +28,10 @@ namespace WebApplication1.Models
 
 		public int? NumbersubjectofdayId { get; set; }
 
+		public int? SpecialityId { get; set; }
+
+		public Speciality Speciality { get; set; }
+
 		public Subject Subject { get; set; }
 
 		public Teacher Teacher { get; set; }

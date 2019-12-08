@@ -96,7 +96,7 @@ var Teacher = /** @class */ (function () {
 }());
 export { Teacher };
 var TimeTable = /** @class */ (function () {
-    function TimeTable(id, dayOfWeek, typeLesson, numbersubjectofday, subject, teacher, auditorium, group) {
+    function TimeTable(id, dayOfWeek, typeLesson, numbersubjectofday, subject, teacher, auditorium, group, specialities) {
         this.id = id;
         this.dayOfWeek = dayOfWeek;
         this.typeLesson = typeLesson;
@@ -105,6 +105,7 @@ var TimeTable = /** @class */ (function () {
         this.teacher = teacher;
         this.auditorium = auditorium;
         this.group = group;
+        this.specialities = specialities;
     }
     return TimeTable;
 }());

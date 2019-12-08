@@ -22,10 +22,11 @@ namespace WebApplication1.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var applicationDbContext = _context.Timetables.Include(p => p.Auditorium)
-														.Include(p => p.Group)
-														.Include(p => p.Numbersubjectofday)
-														.Include(p => p.Subject)
-														.Include(p => p.Teacher);
+				.Include(p => p.Group)
+				.Include(p => p.Numbersubjectofday)
+				.Include(p => p.Subject)
+				.Include(p => p.Teacher)
+				.Include(p => p.Speciality);
 			return View(await applicationDbContext.ToListAsync());
 		}
 
@@ -36,18 +37,20 @@ namespace WebApplication1.Controllers
 			ViewData["TeacherId"] = new SelectList(_context.Teachers, "FullName", "FullName");
 			ViewData["LessonNumberId"] = new SelectList(_context.LessonNumbers.OrderBy(p=>p.Number), "Number", "Number");
 			ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectAbbreviation", "SubjectAbbreviation");
+			ViewData["SpecialityId"] = new SelectList(_context.Specialities, "SpecialityAbbreviation", "SpecialityAbbreviation");
 			return View();
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,DayOfWeek,TypeLesson,Numbersubjectofday,Subject,Teacher,Auditorium,Group")]Timetable timeTable)
+		public async Task<IActionResult> Create([Bind("Id,DayOfWeek,TypeLesson,Numbersubjectofday,Subject,Teacher,Auditorium,Group,Speciality")]Timetable timeTable)
 		{
 			var getAuditorium = await _context.Auditoriums.FirstOrDefaultAsync(p => p.AuditoriumNumber == timeTable.Auditorium.AuditoriumNumber);
 			var getGroup = await _context.Groups.FirstOrDefaultAsync(p => p.Code == timeTable.Group.Code);
 			var getTeacher = await _context.Teachers.FirstOrDefaultAsync(p => p.FullName == timeTable.Teacher.FullName);
 			var getLessonNumber = await _context.LessonNumbers.FirstOrDefaultAsync(p => p.Number == timeTable.Numbersubjectofday.Number);
 			var getSubject = await _context.Subjects.FirstOrDefaultAsync(p => p.SubjectAbbreviation == timeTable.Subject.SubjectAbbreviation);
+			var getSpeciality = await _context.Specialities.FirstOrDefaultAsync(p => p.SpecialityAbbreviation == timeTable.Speciality.SpecialityAbbreviation);
 			timeTable.AuditoriumId = getAuditorium.Id;
 			timeTable.Auditorium = getAuditorium;
 			timeTable.GroupId = getGroup.Id;
@@ -58,6 +61,8 @@ namespace WebApplication1.Controllers
 			timeTable.Teacher = getTeacher;
 			timeTable.SubjectId = getSubject.Id;
 			timeTable.Subject = getSubject;
+			timeTable.SpecialityId = getSpeciality.Id;
+			timeTable.Speciality = getSpeciality;
 			if (ModelState.IsValid)
 			{
 				_context.Add(timeTable);
@@ -69,6 +74,7 @@ namespace WebApplication1.Controllers
 			ViewData["TeacherId"] = new SelectList(_context.Teachers, "FullName", "FullName",timeTable.TeacherId);
 			ViewData["LessonNumberId"] = new SelectList(_context.LessonNumbers, "Number", "Number",timeTable.NumbersubjectofdayId);
 			ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectAbbreviation", "SubjectAbbreviation",timeTable.SubjectId);
+			ViewData["SpecialityId"] = new SelectList(_context.Specialities, "SpecialityAbbreviation", "SpecialityAbbreviation", timeTable.SpecialityId);
 			return View(timeTable);
 		}
 
@@ -89,6 +95,7 @@ namespace WebApplication1.Controllers
 			ViewData["TeacherId"] = new SelectList(_context.Teachers, "FullName", "FullName");
 			ViewData["LessonNumberId"] = new SelectList(_context.LessonNumbers.OrderBy(p => p.Number), "Number", "Number");
 			ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectAbbreviation", "SubjectAbbreviation");
+			ViewData["SpecialityId"] = new SelectList(_context.Specialities, "SpecialityAbbreviation", "SpecialityAbbreviation");
 			return View(timeTable);
 		}
 
@@ -105,6 +112,7 @@ namespace WebApplication1.Controllers
 			var getTeacher = await _context.Teachers.FirstOrDefaultAsync(p => p.FullName == timeTable.Teacher.FullName);
 			var getLessonNumber = await _context.LessonNumbers.FirstOrDefaultAsync(p => p.Number == timeTable.Numbersubjectofday.Number);
 			var getSubject = await _context.Subjects.FirstOrDefaultAsync(p => p.SubjectAbbreviation == timeTable.Subject.SubjectAbbreviation);
+			var getSpeciality = await _context.Specialities.FirstOrDefaultAsync(p => p.SpecialityAbbreviation == timeTable.Speciality.SpecialityAbbreviation);
 			timeTable.AuditoriumId = getAuditorium.Id;
 			timeTable.Auditorium = getAuditorium;
 			timeTable.GroupId = getGroup.Id;
@@ -115,6 +123,8 @@ namespace WebApplication1.Controllers
 			timeTable.Teacher = getTeacher;
 			timeTable.SubjectId = getSubject.Id;
 			timeTable.Subject = getSubject;
+			timeTable.SpecialityId = getSpeciality.Id;
+			timeTable.Speciality = getSpeciality;
 			if (ModelState.IsValid)
 			{
 				try
@@ -140,6 +150,7 @@ namespace WebApplication1.Controllers
 			ViewData["TeacherId"] = new SelectList(_context.Teachers, "FullName", "FullName", timeTable.TeacherId);
 			ViewData["LessonNumberId"] = new SelectList(_context.LessonNumbers, "Number", "Number", timeTable.NumbersubjectofdayId);
 			ViewData["SubjectId"] = new SelectList(_context.Subjects, "SubjectAbbreviation", "SubjectAbbreviation", timeTable.SubjectId);
+			ViewData["SpecialityId"] = new SelectList(_context.Specialities, "SpecialityAbbreviation", "SpecialityAbbreviation", timeTable.SpecialityId);
 			return View(timeTable);
 		}
 
@@ -155,6 +166,7 @@ namespace WebApplication1.Controllers
 												.Include(p => p.Numbersubjectofday)
 												.Include(p => p.Subject)
 												.Include(p => p.Teacher)
+												.Include(p=>p.Speciality)
 												.SingleOrDefaultAsync(m => m.Id == id);
 			if (timetables == null)
 			{

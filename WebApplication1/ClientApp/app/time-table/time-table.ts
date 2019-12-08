@@ -94,7 +94,8 @@ export class TimeTable {
         public subject?: Subject,
         public teacher?: Teacher,
         public auditorium?: Auditorium,
-        public group?: Group) {
+        public group?: Group,
+        public specialities?: Speciality) {
 
     }
 }
