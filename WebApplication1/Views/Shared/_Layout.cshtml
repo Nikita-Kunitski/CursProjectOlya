@@ -26,24 +26,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">WebApplication1</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Расписание</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subject</a></li>
-                    <li><a asp-area="" asp-controller="Auditoriums" asp-action="Index">Auditoriums</a></li>
-                    <li><a asp-area="" asp-controller="AuditoriumTypes" asp-action="Index">AuditoriumTypes</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Дисциплина</a></li>
+                        <li><a asp-area="" asp-controller="Auditoriums" asp-action="Index">Аудитории</a></li>
+                        <li><a asp-area="" asp-controller="AuditoriumTypes" asp-action="Index">Типы аудиторий</a></li>
+                        <li><a asp-area="" asp-controller="Faculties" asp-action="Index">Факультеты</a></li>
+                        <li><a asp-area="" asp-controller="Pulpits" asp-action="Index">Кафедры</a></li>
+                        <li><a asp-area="" asp-controller="Specialities" asp-action="Index">Специаольности</a></li>
+                        <li><a asp-area="" asp-controller="Teachers" asp-action="Index">Преподаватели</a></li>
+                        <li><a asp-area="" asp-controller="Timetables" asp-action="Index">Расписание</a></li>
+                    }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>
     <div class="container body-content">
+        <br /><br />
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2019 - WebApplication1</p>
+            <p>&copy; 2019 - Расписание</p>
         </footer>
     </div>
 

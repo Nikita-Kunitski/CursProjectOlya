@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
@@ -12,14 +9,18 @@ namespace WebApplication1.Models
 	{
 		public int Id { get; set; }
 
+		[Display(Name = "Код специальности")]
 		public string Code { get; set; }
 
+		[Display(Name = "Аббревиатура")]
 		public string SpecialityAbbreviation { get; set; }
 
+		[Display(Name = "Наименование")]
 		public string SpecialityName { get; set; }
 
 		public int? FacultyId { get; set; }
 
+		[Display(Name = "Факультет")]
 		public Faculty Faculty { get; set; }
 	}
 }
