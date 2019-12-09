@@ -25,54 +25,90 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let t of timetables">
+                <tr>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 0">  
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 0">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 1">
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 1">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 2">
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 2">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 3">
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 3">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 4">
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 4">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                     <td>
-                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 5">
-                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-                            <p> {{t.teacher.fullName}}</p>
-                            <p> {{t.auditorium.auditoriumNumber}}</p>
-                        </div>
+                        <table>
+                            <tr *ngFor="let t of timetables">
+                                <td>
+                                    <div class="alert alert-success" *ngIf="t.dayOfWeek == 5">
+                                        <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                                        <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                                        <p> {{t.teacher.fullName}}</p>
+                                        <p> {{t.auditorium.auditoriumNumber}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </tbody>
