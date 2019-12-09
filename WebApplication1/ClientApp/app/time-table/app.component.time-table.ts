@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { DataServiceTimeTable } from "./data.service.time-table";
 import { Auditorium, Speciality, Faculty, TimeTable } from './time-table';
+import { totalmem } from 'os';
 
 @Component({
     selector: 'time-table',
@@ -15,7 +16,6 @@ export class AppComponentTimeTable implements OnInit {
     timetables: TimeTable[];
 
     constructor(private dataService: DataServiceTimeTable) {
-
     }
 
     ngOnInit() {

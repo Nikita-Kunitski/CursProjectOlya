@@ -68,6 +68,22 @@ namespace WebApplication1.Data
 				AuditoriumTypeId = auditoriumType2.Id,
 				AuditoriumType = auditoriumType2
 			});
+			auditoria.Add(new Auditorium()
+			{
+				AuditoriumNumber = "230-1",
+				AuditoriumCapacity = 20,
+				AuditoriumTypeId = auditoriumType2.Id,
+				AuditoriumType = auditoriumType2
+			});
+
+			auditoria.Add(new Auditorium()
+			{
+				AuditoriumNumber = "560-2",
+				AuditoriumCapacity = 25,
+				AuditoriumTypeId = auditoriumType2.Id,
+				AuditoriumType = auditoriumType2
+			});
+
 
 			if (!context.Auditoriums.Any())
 			{
@@ -222,7 +238,7 @@ namespace WebApplication1.Data
 			List<LessonNumber> list = new List<LessonNumber>();
 			list.Add(new LessonNumber() { Number = 1,
 				Begin = new DateTime(year: DateTime.Today.Year, month: DateTime.Today.Month, day: DateTime.Today.Day, hour: 8, minute: 00, second: 0),
-				End = new DateTime(year: DateTime.Today.Year, month: DateTime.Today.Month, day: DateTime.Today.Day, hour: 08, minute: 00, second: 0) });
+				End = new DateTime(year: DateTime.Today.Year, month: DateTime.Today.Month, day: DateTime.Today.Day, hour: 9, minute: 35, second: 0) });
 			list.Add(new LessonNumber() { Number = 2,
 				Begin = new DateTime(year: DateTime.Today.Year, month: DateTime.Today.Month, day: DateTime.Today.Day, hour: 9, minute: 50, second: 0),
 				End = new DateTime(year: DateTime.Today.Year, month: DateTime.Today.Month, day: DateTime.Today.Day, hour: 11, minute: 25, second: 0) });
@@ -244,6 +260,217 @@ namespace WebApplication1.Data
 			if (!context.LessonNumbers.Any())
 			{
 				context.LessonNumbers.AddRange(list.ToArray());
+			}
+			#endregion
+
+			#region Пары
+
+			List<Timetable> timetables = new List<Timetable>();
+			timetables.Add(new Timetable(){ DayOfWeek= Models.DayOfWeek.Понедельник,
+				TypeLesson =TypeLesson.Лекция,
+				Numbersubjectofday =list[0],
+				NumbersubjectofdayId =list[0].Id,
+				Auditorium =auditoria[0],
+				AuditoriumId =auditoria[0].Id,
+				Speciality=specialities[0],
+				SpecialityId=specialities[0].Id,
+				Subject=subjects[0],
+				SubjectId=subjects[0].Id,
+				Group =groups[0],
+				GroupId =groups[0].Id,
+				Teacher=teachers[0],
+				TeacherId=teachers[0].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Понедельник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[1],
+				NumbersubjectofdayId = list[1].Id,
+				Auditorium = auditoria[1],
+				AuditoriumId = auditoria[1].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Понедельник,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[2],
+				NumbersubjectofdayId = list[2].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Понедельник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[0],
+				AuditoriumId = auditoria[0].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[0],
+				SubjectId = subjects[0].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[0],
+				TeacherId = teachers[0].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Понедельник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[1],
+				NumbersubjectofdayId = list[1].Id,
+				Auditorium = auditoria[1],
+				AuditoriumId = auditoria[1].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Понедельник,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[2],
+				NumbersubjectofdayId = list[2].Id,
+				Auditorium = auditoria[3],
+				AuditoriumId = auditoria[3].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[3],
+				SubjectId = subjects[3].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[4],
+				TeacherId = teachers[4].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[0],
+				AuditoriumId = auditoria[0].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[0],
+				SubjectId = subjects[0].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[0],
+				TeacherId = teachers[0].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[1],
+				NumbersubjectofdayId = list[1].Id,
+				Auditorium = auditoria[1],
+				AuditoriumId = auditoria[1].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[3],
+				SubjectId = subjects[3].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[4],
+				TeacherId = teachers[4].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[2],
+				NumbersubjectofdayId = list[2].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[6],
+				SubjectId = subjects[6].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[3],
+				TeacherId = teachers[3].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[1],
+				NumbersubjectofdayId = list[1].Id,
+				Auditorium = auditoria[1],
+				AuditoriumId = auditoria[1].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Вторник,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[2],
+				NumbersubjectofdayId = list[2].Id,
+				Auditorium = auditoria[3],
+				AuditoriumId = auditoria[3].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[3],
+				SubjectId = subjects[3].Id,
+				Group = groups[2],
+				GroupId = groups[2].Id,
+				Teacher = teachers[4],
+				TeacherId = teachers[4].Id
+			});
+			if (!context.Timetables.Any())
+			{
+				context.Timetables.AddRange(timetables.ToArray());
 			}
 			#endregion
 

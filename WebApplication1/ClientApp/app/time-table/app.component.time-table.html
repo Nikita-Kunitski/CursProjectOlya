@@ -13,13 +13,70 @@
     </form>
     <br/><br />
     <div class="container">
-        <div class="alert alert-success" *ngFor="let t of timetables">
-            <p> {{t.dayOfWeek}}</p>
-            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
-            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
-            <p> {{t.teacher.fullName}}</p>
-            <p> {{t.auditorium.auditoriumNumber}}</p>
-        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Понедельник</td>
+                    <td>Вторник</td>
+                    <td>Среда</td>
+                    <td>Четверг</td>
+                    <td>Пятница</td>
+                    <td>Суббота</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of timetables">
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 0">  
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 1">
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 2">
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 3">
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 4">
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="alert alert-success" *ngIf="t.dayOfWeek == 5">
+                            <p> {{t.numbersubjectofday.begin}} - {{t.numbersubjectofday.end}}</p>
+                            <p> {{t.subject.subjectAbbreviation}} ({{t.subject.subjectName}})</p>
+                            <p> {{t.teacher.fullName}}</p>
+                            <p> {{t.auditorium.auditoriumNumber}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
