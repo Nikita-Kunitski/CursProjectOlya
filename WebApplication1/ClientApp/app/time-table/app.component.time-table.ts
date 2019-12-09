@@ -10,7 +10,6 @@ import { totalmem } from 'os';
 })
 export class AppComponentTimeTable implements OnInit {
 
-    auditoriums: Auditorium[];
     specialities: Speciality[];
     faculties: Faculty[];
     timetables: TimeTable[];
@@ -23,8 +22,6 @@ export class AppComponentTimeTable implements OnInit {
     }
 
     loadData() {
-        this.dataService.getAuditoriums()
-            .subscribe((data: Auditorium[]) => this.auditoriums = data);
         this.dataService.getSpecialities()
             .subscribe((data: Speciality[]) => this.specialities = data);
         this.dataService.getFaculties()

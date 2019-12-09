@@ -18,8 +18,6 @@ var AppComponentTimeTable = /** @class */ (function () {
     };
     AppComponentTimeTable.prototype.loadData = function () {
         var _this = this;
-        this.dataService.getAuditoriums()
-            .subscribe(function (data) { return _this.auditoriums = data; });
         this.dataService.getSpecialities()
             .subscribe(function (data) { return _this.specialities = data; });
         this.dataService.getFaculties()
