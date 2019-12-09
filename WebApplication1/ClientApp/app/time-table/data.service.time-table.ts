@@ -3,16 +3,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class DataServiceTimeTable {
-    private urlAuditorium = "api/auditorium";
+    private urlGroup = "api/groups";
     private urlSpeciality = "api/specialities";
     private urlFaculty = "api/faculties";
     private urlTimetable = "api/timtables";
 
     constructor(private http: HttpClient) {
-    }
-
-    getAuditoriums() {
-        return this.http.get(this.urlAuditorium);
     }
 
     getSpecialities() {
@@ -23,8 +19,12 @@ export class DataServiceTimeTable {
         return this.http.get(this.urlFaculty);
     }
 
-    getTimeTable(speciality: string) {
-        return this.http.get(this.urlTimetable + "?speciality="+speciality);
+    getGroups() {
+        return this.http.get(this.urlGroup);
+    }
+
+    getTimeTable(speciality: string, faculty: string, group: string) {
+        return this.http.get(this.urlTimetable + "?speciality=" + speciality + "&faculty=" + faculty + "&group=" + group);
     }
 
 }

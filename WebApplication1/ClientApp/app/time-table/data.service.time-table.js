@@ -12,22 +12,22 @@ import { HttpClient } from '@angular/common/http';
 var DataServiceTimeTable = /** @class */ (function () {
     function DataServiceTimeTable(http) {
         this.http = http;
-        this.urlAuditorium = "api/auditorium";
+        this.urlGroup = "api/groups";
         this.urlSpeciality = "api/specialities";
         this.urlFaculty = "api/faculties";
         this.urlTimetable = "api/timtables";
     }
-    DataServiceTimeTable.prototype.getAuditoriums = function () {
-        return this.http.get(this.urlAuditorium);
-    };
     DataServiceTimeTable.prototype.getSpecialities = function () {
         return this.http.get(this.urlSpeciality);
     };
     DataServiceTimeTable.prototype.getFaculties = function () {
         return this.http.get(this.urlFaculty);
     };
-    DataServiceTimeTable.prototype.getTimeTable = function (speciality) {
-        return this.http.get(this.urlTimetable + "?speciality=" + speciality);
+    DataServiceTimeTable.prototype.getGroups = function () {
+        return this.http.get(this.urlGroup);
+    };
+    DataServiceTimeTable.prototype.getTimeTable = function (speciality, faculty, group) {
+        return this.http.get(this.urlTimetable + "?speciality=" + speciality + "&faculty=" + faculty + "&group=" + group);
     };
     DataServiceTimeTable = __decorate([
         Injectable(),

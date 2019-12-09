@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers.API
 			this.db = db;
 		}
 
-		public IEnumerable<Timetable> Get(string speciality)
+		public IEnumerable<Timetable> Get(string speciality, string faculty, string group)
 		{
 			return db.Timetables.Include(p => p.Auditorium)
 				.Include(p => p.Group)
@@ -27,7 +27,7 @@ namespace WebApplication1.Controllers.API
 				.Include(p => p.Subject)
 				.Include(p => p.Teacher)
 				.Include(p => p.Speciality)
-				.Where(p => p.Speciality.SpecialityAbbreviation == speciality).ToList();
+				.Where(p => p.Speciality.SpecialityAbbreviation == speciality && p.Group.Code==group).ToList();
 		}
 	}
 }

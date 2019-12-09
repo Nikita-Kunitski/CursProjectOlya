@@ -1,17 +1,32 @@
 ﻿<div class="container">
-    <form (submit)="setFilter(speciality.value, faculty.value)">
+    <form (submit)="setFilter(speciality.value, faculty.value, group.value)">
         <div class="form-group">
-            <select class="form-control" id="speciality" #speciality>
-                <option *ngFor="let s of specialities" value="{{s.specialityAbbreviation}}"> {{s.specialityAbbreviation}}</option>
-            </select>
-            <select class="form-control" id="faculty" #faculty>
-                <option *ngFor="let f of faculties"> {{f.facultyAbbreviation}}</option>
-            </select>
             <br/>
-            <button type="submit" class="btn btn-success">Поиск</button>
+            <table class="table"> 
+                <tr>
+                    <td style="padding:10px 10px 10px 10px">
+                        <select class="form-control" id="speciality" #speciality>
+                            <option *ngFor="let s of specialities" value="{{s.specialityAbbreviation}}"> {{s.specialityAbbreviation}} </option>
+                        </select>
+                    </td>
+                    <td style="padding:10px 10px 10px 10px">
+                        <select class="form-control" id="faculty" #faculty>
+                            <option *ngFor="let f of faculties" value="{{f.facultyAbbreviation}}"> {{f.facultyAbbreviation}}</option>
+                        </select>
+                    </td>
+                    <td style="padding:10px 10px 10px 10px">
+                        <select class="form-control" id="group" #group>
+                            <option *ngFor="let g of groups" value="{{g.code}}"> {{g.code}} {{g.speciality.specialityAbbreviation}}</option>
+                        </select>
+                    </td>
+                    <td style="padding:10px 10px 10px 10px">
+                        <button type="submit" class="btn btn-success">Поиск</button>
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
-    <br/><br />
+    <br/>
     <div class="container">
         <table class="table table-bordered">
             <thead>

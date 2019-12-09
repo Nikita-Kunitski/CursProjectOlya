@@ -22,10 +22,12 @@ var AppComponentTimeTable = /** @class */ (function () {
             .subscribe(function (data) { return _this.specialities = data; });
         this.dataService.getFaculties()
             .subscribe(function (data) { return _this.faculties = data; });
+        this.dataService.getGroups()
+            .subscribe(function (data) { return _this.groups = data; });
     };
-    AppComponentTimeTable.prototype.setFilter = function (speciality, faculty) {
+    AppComponentTimeTable.prototype.setFilter = function (speciality, faculty, group) {
         var _this = this;
-        this.dataService.getTimeTable(speciality)
+        this.dataService.getTimeTable(speciality, faculty, group)
             .subscribe(function (data) { return _this.timetables = data; });
     };
     AppComponentTimeTable = __decorate([
