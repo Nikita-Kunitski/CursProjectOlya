@@ -468,6 +468,74 @@ namespace WebApplication1.Data
 				Teacher = teachers[4],
 				TeacherId = teachers[4].Id
 			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Среда,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[6],
+				SubjectId = subjects[6].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[3],
+				TeacherId = teachers[3].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Четверг,
+				TypeLesson = TypeLesson.Практика,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[1],
+				SubjectId = subjects[1].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[2],
+				TeacherId = teachers[2].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Пятница,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[0],
+				NumbersubjectofdayId = list[0].Id,
+				Auditorium = auditoria[2],
+				AuditoriumId = auditoria[2].Id,
+				Speciality = specialities[1],
+				SpecialityId = specialities[1].Id,
+				Subject = subjects[6],
+				SubjectId = subjects[6].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[3],
+				TeacherId = teachers[3].Id
+			});
+			timetables.Add(new Timetable()
+			{
+				DayOfWeek = Models.DayOfWeek.Суббота,
+				TypeLesson = TypeLesson.Лекция,
+				Numbersubjectofday = list[1],
+				NumbersubjectofdayId = list[1].Id,
+				Auditorium = auditoria[1],
+				AuditoriumId = auditoria[1].Id,
+				Speciality = specialities[0],
+				SpecialityId = specialities[0].Id,
+				Subject = subjects[3],
+				SubjectId = subjects[3].Id,
+				Group = groups[0],
+				GroupId = groups[0].Id,
+				Teacher = teachers[4],
+				TeacherId = teachers[4].Id
+			});
 			if (!context.Timetables.Any())
 			{
 				context.Timetables.AddRange(timetables.ToArray());
